@@ -13,3 +13,10 @@ The route to test is '/api/images' with appropriate queries set:
 - filename: name of the image on file
 - width: width of the image
 - height: height of the image
+
+## Scripts
+npm start - starts the development server
+npm run build - builds the project
+npm run test - builds the project then runs tests
+npm run prettier - formats source code
+npm run lint - runs eslint
