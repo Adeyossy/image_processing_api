@@ -9,7 +9,13 @@ var image_processor_1 = __importDefault(require("../image_processing/image_proce
 var fs_1 = __importDefault(require("fs"));
 var router = express_1.default.Router();
 var assetsDirectory = path_1.default.join(__dirname, '..', 'assets');
+if (!fs_1.default.existsSync(assetsDirectory)) {
+    fs_1.default.mkdirSync(assetsDirectory);
+}
 var fullAssetsDirectory = path_1.default.join(assetsDirectory, 'full');
+if (!fs_1.default.existsSync(fullAssetsDirectory)) {
+    fs_1.default.mkdirSync(fullAssetsDirectory);
+}
 var thumbDirectory = path_1.default.join(assetsDirectory, 'thumb');
 if (!fs_1.default.existsSync(thumbDirectory)) {
     fs_1.default.mkdirSync(thumbDirectory);
@@ -49,6 +55,9 @@ router.get('/images', function (req, res) {
                 }
                 res.send('Neither width nor height were set');
             }
+        }
+        else {
+            res.send('File does not exist');
         }
     }
     else {

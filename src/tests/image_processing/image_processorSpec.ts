@@ -1,14 +1,14 @@
-import path from 'path'
-import processImage from '../../image_processing/image_processor'
+import path from 'path';
+import processImage from '../../image_processing/image_processor';
 
-describe('This suite tests the image processing module', () => {
-  it('tests the returned value of the image processing module', async () => {
+describe('This suite tests the image processing module', (): void => {
+  it('tests the returned value of the image processing module', async (): Promise<void> => {
     const output = await processImage(
       path.join(__dirname, '../../assets/full/icelandwaterfall.jpg'),
       300,
       300,
       path.join(__dirname, '../../assets/thumb/icelandwaterfall_300x300.jpg')
-    )
-    expect(output).toBeTruthy()
-  })
-})
+    );
+    expect(output).toBeTruthy();
+  });
+});

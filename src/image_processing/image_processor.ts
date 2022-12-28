@@ -1,4 +1,4 @@
-import sharp from 'sharp'
+import sharp from 'sharp';
 
 const processImage = async (
   pathToImage: string,
@@ -8,11 +8,11 @@ const processImage = async (
 ): Promise<sharp.OutputInfo> => {
   const saveStatus = await sharp(pathToImage)
     .resize(width, height, {
-      fit: 'cover'
+      fit: 'cover',
     })
-    .toFile(pathToImageOutput)
-  console.log('save status => ', saveStatus)
-  return saveStatus
-}
+    .toFile(pathToImageOutput);
 
-export default processImage
+  return saveStatus;
+};
+
+export default processImage;

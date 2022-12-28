@@ -46,12 +46,11 @@ var processImage = function (pathToImage, width, height, pathToImageOutput) { re
         switch (_a.label) {
             case 0: return [4 /*yield*/, (0, sharp_1.default)(pathToImage)
                     .resize(width, height, {
-                    fit: 'cover'
+                    fit: 'cover',
                 })
                     .toFile(pathToImageOutput)];
             case 1:
                 saveStatus = _a.sent();
-                console.log('save status => ', saveStatus);
                 return [2 /*return*/, saveStatus];
         }
     });
