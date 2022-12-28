@@ -3,11 +3,6 @@ import router from './routes/routes'
 
 const app = express()
 
-app.get('/', (req, res): void => {
-  // console.log('req => ', req.params);
-  res.send('Hello Heavenly Apps')
-})
-
 app.use('/api', router)
 
 app.listen(3000, (): void => {

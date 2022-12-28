@@ -44,12 +44,14 @@ var processImage = function (pathToImage, width, height, pathToImageOutput) { re
     var saveStatus;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, (0, sharp_1.default)(pathToImage).resize(width, height, {
+            case 0: return [4 /*yield*/, (0, sharp_1.default)(pathToImage)
+                    .resize(width, height, {
                     fit: 'cover'
-                }).toFile(pathToImageOutput)];
+                })
+                    .toFile(pathToImageOutput)];
             case 1:
                 saveStatus = _a.sent();
-                console.log("save status => ", saveStatus);
+                console.log('save status => ', saveStatus);
                 return [2 /*return*/, saveStatus];
         }
     });

@@ -41,13 +41,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var path_1 = __importDefault(require("path"));
 var image_processor_1 = __importDefault(require("../../image_processing/image_processor"));
-describe("This suite tests the image processing module", function () {
-    it("tests the returned value of the image processing module", function () { return __awaiter(void 0, void 0, void 0, function () {
+describe('This suite tests the image processing module', function () {
+    it('tests the returned value of the image processing module', function () { return __awaiter(void 0, void 0, void 0, function () {
         var output;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, (0, image_processor_1.default)(path_1.default
-                        .join(__dirname, '../../assets/full/icelandwaterfall.jpg'), 300, 300, path_1.default.join(__dirname, '../../assets/full/icelandwaterfall_300x300.jpg'))];
+                case 0: return [4 /*yield*/, (0, image_processor_1.default)(path_1.default.join(__dirname, '../../assets/full/icelandwaterfall.jpg'), 300, 300, path_1.default.join(__dirname, '../../assets/thumb/icelandwaterfall_300x300.jpg'))];
                 case 1:
                     output = _a.sent();
                     expect(output).toBeTruthy();

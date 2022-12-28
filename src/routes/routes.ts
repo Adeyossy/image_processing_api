@@ -19,7 +19,10 @@ router.get('/images', (req, res): void => {
   const heightExists = Object.prototype.hasOwnProperty.call(query, 'height')
 
   if (Object.prototype.hasOwnProperty.call(query, 'filename')) {
-    const imagePath = path.join(fullAssetsDirectory, `${query.filename as string}.jpg`)
+    const imagePath = path.join(
+      fullAssetsDirectory,
+      `${query.filename as string}.jpg`
+    )
     if (fs.existsSync(imagePath)) {
       // If image exists, continue to check if width and/or height parameters were supplied
       if (widthExists && heightExists) {
@@ -27,7 +30,9 @@ router.get('/images', (req, res): void => {
         // First create cached image path
         const cachedImagePath = path.join(
           thumbDirectory,
-          `${query.filename as string}_${query.width as string}x${query.height as string}.jpg`
+          `${query.filename as string}_${query.width as string}x${
+            query.height as string
+          }.jpg`
         )
 
         if (!fs.existsSync(cachedImagePath)) {
